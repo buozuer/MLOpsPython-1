@@ -55,6 +55,7 @@ resource "azurerm_machine_learning_workspace" "amlws" {
   application_insights_id = azurerm_application_insights.amlai.id
   storage_account_id      = azurerm_storage_account.amlstor.id
   container_registry_id   = azurerm_container_registry.amlacr.id
+  key_vault_id            = "buozuerdevops-AML-KV"
 
   identity {
     type = "SystemAssigned"
