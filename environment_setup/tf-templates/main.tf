@@ -29,14 +29,6 @@ resource "azurerm_storage_account" "amlstor" {
   account_replication_type = "LRS"
 }
 
-# Keyvault for AML Service
-resource "azurerm_key_vault" "amlkv" {
-  name                = "${var.BASE_NAME}-AML-KV"
-  location            = data.azurerm_resource_group.amlrg.location
-  resource_group_name = data.azurerm_resource_group.amlrg.name
-  tenant_id           = data.azurerm_client_config.currentconfig.tenant_id
-  sku_name            = "standard"
-}
 
 # App Insights for AML Service
 resource "azurerm_application_insights" "amlai" {
