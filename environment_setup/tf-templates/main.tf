@@ -53,7 +53,6 @@ resource "azurerm_machine_learning_workspace" "amlws" {
   location                = data.azurerm_resource_group.amlrg.location
   resource_group_name     = data.azurerm_resource_group.amlrg.name
   application_insights_id = azurerm_application_insights.amlai.id
-  key_vault_id            = azurerm_key_vault.amlkv.id
   storage_account_id      = azurerm_storage_account.amlstor.id
   container_registry_id   = azurerm_container_registry.amlacr.id
 
